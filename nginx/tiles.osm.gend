@@ -4,5 +4,10 @@ server {
 	location / {
 		alias /imports/tiles/osm/;
 		#autoindex on;
+		if ($request_uri ~* \.(png)$) {
+			expires 72h;
+			break;
+		}
+
    	}
 }
