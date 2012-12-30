@@ -1,0 +1,8 @@
+server {
+	server_name tiles.osm.gend;
+
+	location / {
+		alias /imports/tiles/osm/;
+		#autoindex on;
+   	}
+}
