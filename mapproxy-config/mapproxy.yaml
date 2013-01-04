@@ -1,0 +1,40 @@
+services:
+  tms:
+    origin: 'nw'
+
+layers:
+  - name: osm
+    title: OSM-SI
+    sources: [osm-si_cache]
+    
+caches:
+  osm-si_cache:
+    grids: [osm_grid]
+    sources: [osm_mapnik]
+    format: image/png
+    cache:
+      type: file
+      base_dir: '/imports/tiles/'
+      lock_dir: '/imports/tiles/locks'
+      directory_layout: tms
+  
+sources:
+  osm_mapnik:
+    type: mapnik
+    mapfile: /home/ja/mapnik-stylesheets/osm.xml
+
+grids:
+  osm_grid:
+    srs: EPSG:900913
+    origin: nw
+
+image:
+  resampling_method: bilinear
+  jpeg_quality: 90
+
+globals:
+  #next are some global configuration options for MapProxy. They mostly explain themselves, or can be looked-up in the MapProxy docs.
+  cache:
+      base_dir: '/imports/tiles/'
+      lock_dir: '/imports/tiles/locks'
+      directory_layout: tms

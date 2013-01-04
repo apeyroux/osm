@@ -1,0 +1,4 @@
+seeds:
+  osmseed:
+    #levels: [1,2,3,4]
+    caches: [osm-si_cache]
