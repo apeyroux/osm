@@ -21,7 +21,7 @@ caches:
 sources:
   osm_mapnik:
     type: mapnik
-    mapfile: /home/ja/mapnik-stylesheets/osm.xml
+    mapfile: /imports/mapnik/mapnik-stylesheets/osm.xml
 
 grids:
   osm_grid:
@@ -33,7 +33,6 @@ image:
   jpeg_quality: 90
 
 globals:
-  #next are some global configuration options for MapProxy. They mostly explain themselves, or can be looked-up in the MapProxy docs.
   cache:
       base_dir: '/imports/tiles/'
       lock_dir: '/imports/tiles/locks'
